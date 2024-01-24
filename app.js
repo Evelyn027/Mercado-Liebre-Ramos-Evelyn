@@ -8,7 +8,7 @@ const app = express();
 const publicPath = path.resolve(__dirname, "./public");
 app.use(express.static(publicPath));
 
-/* cONFIGURACION DE SERVIDOR*/
+/* CONFIGURACION DE SERVIDOR*/
 /* app.listen(3500, () => {
     console.log('Servidor corriendo');
 }); */
