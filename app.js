@@ -14,9 +14,13 @@ app.use(express.static(publicPath));
 }); */
 
 const port = process.env.PORT || 3001;
+/* app.listen(port, () => {
+    console.log("Servidor corriendo en el puerto " + port);
+}); */
 app.listen(port, () => {
-    console.log("Servidor corriendo en el puerto" + port);
+    console.log(`Server is running on http://localhost:${port}`)
 });
+
 
 /* ROUTES */
 app.get("/", (req, res) => {

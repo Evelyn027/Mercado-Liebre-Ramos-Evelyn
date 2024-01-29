@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@200&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+:root {
+    --color-yellow: #eac926;
+    --color-blue: #03264c;
+    --color-sky-blue: #1259c3;
+    --color-dark-gray: #666;
+    --color-light-gray: #ebebeb;
+    --color-green: #39b54a;
+}
+
+body {
+    background-color: var(--color-light-gray);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+header {
+    background-color: var(--color-yellow);
+    padding: 12px;
+}
+main {
+    width: 90%;
+    margin: auto;
+    padding: 12px;
+}
+
+
+/* ---------SECCION DEL HEADER------- */
+
+.header-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Barra de busqueda */
+.search-container {
+    display: flex;
+    background-color: white;
+    border-radius: 5px;
+}
+
+a,
+.search-container {
+    padding: 0 5px;
+    width: 50%;
+}
+
+a .logo {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5em;
+    color: var(--color-blue);
+    text-decoration: none;
+}
+
+.search-container .input-search {
+    width: 80%;
+    height: 2.7rem;
+    border-radius: 5px 0 0 5px;
+    padding: 0 0 0 0.5rem;
+    border: none;
+    outline: none;
+    font-size: 1em;
+}
+
+.search-container button {
+    width: 20%;
+    padding: 10px;
+    border: none;
+    color: white;
+    border-radius: 0 4px 4px 0;
+}
+
+.cta-container {
+    margin: 12px 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+}
+
+/* Burguer */
+.burger-menu {
+    background-color: var(--color-sky-blue);
+    width: 50px;
+    height: 50px;
+    border-radius: 15%;
+    margin: 24px auto;
+}
+
+.burger-menu i {
+    
+}
+
+/* Menu de navegacion */
+.main-nav {
+    display: flex;
+}
+
+
+
+
+
+
+/* ---------SECCION DEL MAIN------- */
+
+
+
+
+
+
+
+
+/* ---------SECCION DEL FOOTER------- */
+.footer-section {
+    text-align: center;
+}
+
+.footer-section h3 {
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    margin-bottom: 10px;
+}
+
+.footer-section p:last-child {
+  margin-bottom: 0; 
+}
+
+/* Estilos para el copyright */
+.copyright {
+    text-align: center;
+  margin-top: 20px; /
+}
