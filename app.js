@@ -1,7 +1,6 @@
-const { log } = require("console");
 const express = require("express");
 const path = require("path");
-const { isDeepStrictEqual } = require("util");
+
 
 const app = express();
 
@@ -13,8 +12,8 @@ app.use(express.static(publicPath));
     console.log('Servidor corriendo');
 }); */
 
-const port = process.env.PORT || 3001;
-/* app.listen(port, () => {
+/* const port = process.env.PORT || 3001;
+app.listen(port, () => {
     console.log("Servidor corriendo en el puerto " + port);
 }); */
 app.listen(port, () => {
