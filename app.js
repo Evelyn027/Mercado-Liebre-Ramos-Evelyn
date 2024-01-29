@@ -1,21 +1,15 @@
 const express = require("express");
+const app = express();
 const path = require("path");
 
-
-const app = express();
-
-const publicPath = path.resolve(__dirname, "./public");
-app.use(express.static(publicPath));
+app.use('/public',express.static('public'));
 
 /* CONFIGURACION DE SERVIDOR*/
-/* app.listen(3500, () => {
-    console.log('Servidor corriendo');
-}); */
 
-/* const port = process.env.PORT || 3001;
-app.listen(port, () => {
+const port = process.env.PORT || 3001;
+/* app.listen(port, () => {
     console.log("Servidor corriendo en el puerto " + port);
-}); */
+});  */
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`)
 });
@@ -23,5 +17,15 @@ app.listen(port, () => {
 
 /* ROUTES */
 app.get("/", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "views", "home.html"));
+    res.sendFile(`${__dirname}/views/home.html`)
+});
+
+app.get('/login', (req, res) => {
+    // res.sendFile(path.join(__dirname, '/views/login.html'))
+    res.sendFile(`${__dirname}/views/login.html`)
+});
+
+app.get('/register', (req, res) => {
+    // res.sendFile(path.join(__dirname, '/views/register.html'))
+    res.sendFile(`${__dirname}/views/register.html`)
 });
