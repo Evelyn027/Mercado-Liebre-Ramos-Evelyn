@@ -20,9 +20,9 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
-header {
+.main-header {
     background-color: var(--color-yellow);
-    padding: 12px;
+    padding: 20px;
 }
 main {
     width: 90%;
@@ -30,21 +30,14 @@ main {
     padding: 12px;
 }
 
-header ul li{
-    list-style-type: none;
-}
-header ul li a{
-    text-decoration: none;
-    color: #000;
-}
 
 /* ---------SECCION DEL HEADER------- */
 
-.header-top {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+.logo {
+    width: 150px;
+    text-align: center;
+    font-size: 1.5em;
+    text-decoration: none;
 }
 
 /* Barra de busqueda */
@@ -54,19 +47,11 @@ header ul li a{
     border-radius: 5px;
 }
 
-a,
+/* a,
 .search-container {
     padding: 0 5px;
     width: 50%;
-}
-
-a .logo {
-    width: 100%;
-    text-align: center;
-    font-size: 1.5em;
-    color: var(--color-blue);
-    text-decoration: none;
-}
+} */
 
 .search-container .input-search {
     width: 80%;
@@ -86,32 +71,38 @@ a .logo {
     border-radius: 0 4px 4px 0;
 }
 
-.cta-container {
-    margin: 12px 0;
-    width: 100%;
-    text-align: center;
-    font-size: 1em;
-}
 
 /* Burguer */
 .burger-menu {
     background-color: var(--color-sky-blue);
-    width: 50px;
-    height: 50px;
-    border-radius: 15%;
-    margin: 24px auto;
+    color: white;
+    display: block;
+    max-width: 50px;
+    padding: 15px 0px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 18px;
+    margin: auto;
 }
 
-/* .burger-menu i {
-    
-} */
 
 /* Menu de navegacion */
-.main-nav {
-    display: flex;
-    
+.main-nav{
+    display: none;
 }
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 
+}
+.main-nav a{
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    padding: 5px 0;
+    font-size: 16px;
+}
 
 
 /* ---------SECCION DEL MAIN------- */
@@ -224,30 +215,68 @@ a .logo {
 
 /*---------------MEDIA QUERIS--------------*/
 @media (min-width: 768px) {
-    .producto,
-    .oferta {
-        width: 50%;
+
+    .header-top{
+        display: flex;
+        justify-content: space-between;
+    }
+    .cta-container{
+        max-width: 350px;
+        text-align: right;
     }
     .burger-menu {
         display: none;
     }
-    .nav-list,
-    .nav-list2 {
+    .main-nav{
+        display: flex;
+        justify-content: space-between;
+    }
+    .main-nav ul{
         display: flex;
     }
-}
-/* Cambios en la regla de medios para mobile */
-@media (max-width: 767px) {
-    /* Ocultar site y login navbar en version mobile */
-    .nav-list,
-    .nav-list2 {
-        display: none;
+    .main-nav li{
+        margin: 0 5px;
     }
+
+    .producto,
+    .oferta {
+        width: 50%;
+    }
+
+    
 }
 
 /* Cambios en la regla de medios para desktop */
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
     
+    .logo{
+        width: 250px;
+    }
+    .header-top, 
+    .main-nav{
+        max-width: 1200px;
+        margin: auto;
+    }
+    .header-top{
+        align-items: center;
+    }
+    .cta-container{
+        max-width: none;
+        font-size: 22px;
+        font-weight: 400;
+        margin: 0;
+    }
+    .main-nav{
+        margin-top: 20px;
+    }
+    .main-nav li{
+        margin: 0 10px;
+    }
+    .main-nav a{
+        font-size: 19px;
+    }
+
+
 
     .producto,
     .oferta {
