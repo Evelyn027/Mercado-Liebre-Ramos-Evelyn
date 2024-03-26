@@ -1,13 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/register.css">
-    <title>Document</title>
-</head>
-<body>
     
+    <title>Mercado Liebre</title>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="header-top">
+            <div class="logo-container">
+                
+                    <img class="logo"
+                        src="images/logo-mercado-liebre.svg"
+                        alt="Logo de mercado libre" />
+                
+            </div>
+            <div class="search-container">
+                <input type="text" placeholder="Buscar productos, marcas..." class="input-search">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <p class="cta-container">
+                <!-- Comprá en cuotas y sin tarjeta de crédito -->
+                <i class="fa-solid fa-hand-holding-dollar"></i> Comprá en cuotas y sin
+                tarjeta de crédito
+            </p>
+        </div>
+        <div class="burger-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav class="main-nav">
+            <!-- Barra de navegación -->
+            <ul class="nav-list">
+                <li><a href="#" class="nav-link" href="http://" target="_blank" rel="noopener noreferrer">Ofertas </a>
+                </li>
+                <li><a href="#" class="nav-link" href="http://" target="_blank" rel="noopener noreferrer">Tiendas
+                        Oficiales</a></li>
+                <li><a href="#" class="nav-link" href="http://" target="_blank" rel="noopener noreferrer">Vender</a>
+                </li>
+                <li><a href="#" class="nav-link" href="http://" target="_blank" rel="noopener noreferrer">Ayuda</a></li>
+            </ul>
+            <ul class="nav-list2">
+                <li><a href="register" class="nav-link"  target="_blank" rel="noopener noreferrer">Creá tu cuenta <i
+                            class="fa-regular fa-id-card"></i> </a></li>
+                <li><a href="#" class="nav-link" href="/login" target="_blank" rel="noopener noreferrer">Ingresá <i
+                            class="fa-solid fa-right-to-bracket"></i> </a></li>
+                <li><a href="#" class="nav-link" href="http://" target="_blank" rel="noopener noreferrer">Mis compras <i
+                            class="fa-solid fa-basket-shopping"></i> </a></li>
+            </ul>
+        </nav>
+
+
+    </header>
+    <section class="banner">
+        <img src="images/img-home-banner.jpg" alt="Banner de ofertas">
+    </section>
+
+    <main class="main-register">
+        <h1>REGISTRATE</h1>
+        <form class="form-register" action="/register" method="POST">
+            <div class="form-group">
+                <label class="form-group-title" for="name">Nombre y Apellido:</label>
+                <input type="text" id="name" name="name" placeholder="ej. Agustin Martinez" required />
+            </div>
+            <div class="form-group">
+                <label class="form-group-title" for="name">Nombre de Usuario:</label>
+                <input type="text" id="username" name="username" placeholder="ej. Usuar22" required />
+            </div>
+            <div class="form-group">
+                <label class="form-group-title" for="email">Email:</label>
+                <input type="email" id="email" name="email" autocomplete="username"
+                    placeholder="ej. sucorreoaqui@gmail.com" required />
+            </div>
+            <div class="form-group">
+                <label class="form-group-title" for="birthdate">Fecha de nacimiento:</label>
+                <input type="date" id="birthdate" name="birthdate" required>
+            </div>
+            <div class="form-group">
+                <label class="form-group-title" for="address">Domicilio:</label>
+                <input type="text" id="address" name="address" required />
+            </div>
+            <div class="form-group">
+                <h3>Perfil de usuario:</h3>
+                <label>
+                    <input type="radio" name="user_profile" required>
+                    Rol de Comprador
+                </label>
+                <label>
+                    <input type="radio" name="user_profile" required>
+                    Rol de Vendedor
+                </label>
+            </div>
+            <div class="form-group">
+                <h3>Categoria de interes:</h3>
+                <label>
+                    <input type="checkbox" name="interests">
+                    Electro
+                </label>
+                <label>
+                    <input type="checkbox" name="interests">
+                    Moda
+                </label>
+                <label>
+                    <input type="checkbox" name="interests">
+                    Hogar
+                </label>
+                <label>
+                    <input type="checkbox" name="interests">
+                    Jugueteria
+                </label>
+                <label>
+                    <input type="checkbox" name="interests">
+                    Vida Sana
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="form-group-title" for="avatar">Foto de usuario</label>
+                <img class="image-userForm" src="images/user.webp" alt="avatar" id="image" />
+                <input type="file" name="photo" id="photo" accept="image/*" />
+            </div>
+            <div class="form-group">
+                <label class="form-group-title" for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" autocomplete="new-password" />
+            </div>
+            <div class="form-group">
+                <label class="form-group-title" for="password_confirmation">Confirmar contraseña:</label>
+                <input type="password" id="password_confirmation" name="password_confirmation"
+                    autocomplete="new-password" />
+            </div>
+            <button class="buttonForm" type="submit">Enviar</button>
+            <button class="buttonForm" id="reset" type="reset">Borrar</button>
+        </form>
+    </main>
+
+    <footer>
+        <!-- Pago con tarjeta o en efectivo -->
+        <section class="footer-section">
+            <h3>Pagá con tarjeta o en efectivo</h3>
+            <p>Con Mercado Liebre Cash, tenés cuotas sin interés con tarjeta o efectivo en puntos de pago. ¡Y siempre es
+                seguro!</p>
+        </section>
+
+        <!-- Envio gratis -->
+        <section class="footer-section">
+            <h3>Envío gratis desde $2,500</h3>
+            <p>Solo por estar registrad@ en Mercado Liebre tenés envíos gratis en miles de productos. Es un beneficio de
+                Mercado Puntos.</p>
+        </section>
+
+        <!-- Seguridad -->
+        <section class="footer-section">
+            <h3>Seguridad, de principio a fin</h3>
+            <p>¿No te gusta? ¡Devolvelo! En Mercado Liebre, no hay nada que no puedas hacer, porque estás siempre
+                protegid@.</p>
+        </section>
+
+        <!-- Copyright -->
+        <p class="copyright">Copyright © 1999-2020 MercadoLiebre S.R.L.</p>
+    </footer>
 </body>
+
 </html>
