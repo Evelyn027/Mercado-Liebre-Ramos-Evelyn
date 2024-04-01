@@ -145,9 +145,7 @@ main {
 }
 
 .producto, .oferta {
-    /*display: inline-block;
-    width: 300px;
-    */flex: 1 0 100%;/*Unarticuloporfilaenmobile*/
+    flex: 1 0 100%; /*Unarticuloporfilaenmobile*/
     box-sizing: border-box;
     margin: 10px 10px 10px 10px;
     position: relative;
@@ -267,10 +265,24 @@ main {
 
 
 /* ---------SECCION DEL FOOTER------- */
+footer {
+    background-color: white; 
+    padding-top: 20px; 
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.6); 
+}
 .footer-section {
     text-align: center;
+    padding: 20px;
 }
-
+.footer-section i {
+    font-size: 24px; 
+    color: #5277db; 
+    margin-bottom: 10px; 
+    transition: color 0.3s ease;
+}
+.footer-section i:hover {
+    color: #0022AA; /* Nuevo color al hover */
+}
 .footer-section h3 {
     margin-bottom: 10px;
 }
@@ -286,9 +298,9 @@ main {
 /* Estilos para el copyright */
 .copyright {
     text-align: center;
-    margin-top: 20px; /
+    margin-top: 20px; 
+    color: #666; 
 }
-
 
 
 
@@ -297,7 +309,7 @@ main {
 @media (min-width: 768px) {
     /* ------SECCION HEADER----- */
     .main-header {
-        width: 100%; /* Ajuste el ancho del encabezado al 100% */
+        width: 100%; /* Ajuste al 100% */
     }
     .header-top{
         flex-wrap: nowrap;
@@ -383,7 +395,7 @@ main {
 @media (min-width: 1200px) {
     /* ------SECCION HEADER----- */
     .main-header {
-        width: 100%; /* Ajuste el ancho del encabezado al 100% */
+        width: 100%; /* Ajuste encabezado al 100% */
     }
     .logo{
         width: 250px;
@@ -430,5 +442,26 @@ main {
         font-size: 1.2em;
         margin-top: 10px;
     }
-    
+    /* ------SECCION FOOTER----- */
+    footer {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .footer-section {
+        flex: 0 1 33%; /* Cada seccion ocupa 1/3 del ancho */
+        text-align: center;
+        padding: 20px; 
+    }
+
+    .footer-section h3 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+
+    .footer-section p {
+        font-size: 1em;
+        margin-bottom: 10px;
+    }
 }
