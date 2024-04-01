@@ -55,6 +55,9 @@
     background-color:#5277db;
     color: #ffffff;
 }
+.buttonForm:hover {
+    background-color: #0022AA;
+} 
 
 @media (min-width: 768px) {
     .form-register {

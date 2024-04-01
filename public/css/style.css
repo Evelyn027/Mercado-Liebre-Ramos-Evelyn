@@ -23,11 +23,16 @@ body {
 .main-header {
     background-color: var(--color-yellow);
     padding: 20px;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    
 }
 main {
     width: 90%;
     margin: auto;
     padding: 12px;
+    margin-top: 250px;
 }
 
 
@@ -38,6 +43,7 @@ main {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    
 }
 
 .logo {
@@ -139,16 +145,28 @@ main {
 }
 
 .producto, .oferta {
-    /* display: inline-block;
-    width: 300px;*/
-    flex: 1 0 100%; /* Un articulo por fila en mobile */
+    /*display: inline-block;
+    width: 300px;
+    */flex: 1 0 100%;/*Unarticuloporfilaenmobile*/
     box-sizing: border-box;
     margin: 10px 10px 10px 10px;
     position: relative;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
-    background-color:#ffffff
+    
 }
 
+.producto:hover, .oferta:hover {
+    animation: boxShadowAnimation 0.5s ease-in-out forwards; /* Aplica la animación al hacer hover */
+}
+
+@keyframes boxShadowAnimation {
+    0% {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+    100% {
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.9); /* Cambia la sombra al 100% de la animación */
+    }
+}
 
 .producto img, .oferta img {
     max-width: 100%;
@@ -171,7 +189,6 @@ main {
     
 } 
 .send-icon{
-    
     display: block;
     padding: 5px;
     width: 30px;
@@ -183,8 +200,21 @@ main {
     position: absolute;
     right: 20px;
     bottom: 115px;
-
 }
+.producto:hover .send-icon, 
+.oferta:hover .send-icon{
+    animation: rotateIcon 0.5s ease-in-out forwards;
+}
+
+@keyframes rotateIcon {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-90deg);
+}
+} 
+
 .discount{
     font-size: 16px;
     color: var(--color-green);
@@ -202,6 +232,39 @@ main {
     color: var(--color-green);
     position: relative
 }
+.description{
+    display: none;
+}
+.producto .description,
+.oferta .description {
+    display: none;
+    position: absolute;
+    top: 55%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(61, 61, 61, 0.8);
+    color: white;
+    z-index: 1;
+    text-align: center;
+    padding: 10px;
+}
+
+.producto:hover .description,
+.oferta:hover .description {
+    display: block;
+    animation: translateDescription 0.8s ease-in-out;
+    -webkit-animation: translateDescription 0.8s ease-in-out;
+}
+
+@keyframes translateDescription {
+    0% {
+        transform: translateY(-15px);
+}
+    100% {
+        transform: translateY(0);
+}
+}
+
 
 /* ---------SECCION DEL FOOTER------- */
 .footer-section {
@@ -233,6 +296,9 @@ main {
 /*---------------MEDIA QUERIS--------------*/
 @media (min-width: 768px) {
     /* ------SECCION HEADER----- */
+    .main-header {
+        width: 100%; /* Ajuste el ancho del encabezado al 100% */
+    }
     .header-top{
         flex-wrap: nowrap;
         font-size: 0.8rem;
@@ -263,7 +329,9 @@ main {
 
 
 
-
+    main {
+        margin-top: 150px;
+    }
     .burger-menu {
         display: none;
     }
@@ -290,13 +358,33 @@ main {
     .producto, .oferta {
         flex: 1 0 calc(50% - 20px); /* Dos articulos por fila en tablet */
     }
+    .producto .description,
+    .oferta .description {
+        display: block; /* Descripcion visible */
+        position: static; /* Elimina la pos absoluta */
+        top: auto; /* Elimina la pos superior */
+        left: auto; /* Elimina la pos izquierda */
+        width: auto; /* Elimina el ancho definido */
+        background-color: transparent; /* Elimina el color de fondo */
+        color: initial; /* Restaura el color del texto */
+        z-index: initial; /* Restaura el indice Z */
+        text-align: initial; /* Restaura la alineacion del texto */
+        padding: 0; /* Elimina el padding */
+        animation: none; /* Desactiva la anim */
+    }
+    .producto:hover .description,
+    .oferta:hover .description{
+        animation: none;
+}
 
-    
 }
 
 /* Cambios en la regla de medios para desktop */
 @media (min-width: 1200px) {
     /* ------SECCION HEADER----- */
+    .main-header {
+        width: 100%; /* Ajuste el ancho del encabezado al 100% */
+    }
     .logo{
         width: 250px;
     }
@@ -325,6 +413,9 @@ main {
     }
 
     /* ------SECCION MAIN----- */
+    main {
+        margin-top: 150px;
+    }
     .banner img {
         max-width: 100%;
         height: auto;
@@ -336,8 +427,8 @@ main {
     }
 
     .producto-info .description {
-        display: block;
         font-size: 1.2em;
         margin-top: 10px;
     }
+    
 }
