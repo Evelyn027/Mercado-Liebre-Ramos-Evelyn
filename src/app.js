@@ -12,10 +12,10 @@ app.set('views', path.join(__dirname, '/views'))
 
 /*-----ROUTES-----*/
 const homeRouter = require('./routes/homeRoutes')
-
+const userRouter = require('./routes/userRoutes')
 
 app.use('/', homeRouter)
-
+app.use('/user', userRouter)
 
 /*-----CONFIGURACION DE SERVIDOR-----*/
 app.listen(port, () => {
